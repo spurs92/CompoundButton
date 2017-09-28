@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.spurs.compoundbuttonex.MainActivity"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원정보"
+        android:gravity="center"
+        android:textSize="24sp"/>
+    <TextView
+        android:id="@+id/text_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME : "
+        android:layout_below="@+id/text_01"
+        android:layout_alignBottom="@+id/edit_01"
+        android:layout_alignRight="@+id/text_03"
+        android:gravity="center"/>
+    <EditText
+        android:id="@+id/edit_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        android:layout_below="@+id/text_01"
+        android:layout_toRightOf="@+id/text_02"
+        android:nextFocusDown="@+id/editText2"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/text_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GENDER : "
+        android:layout_below="@+id/text_02"
+        android:layout_alignBottom="@+id/rg_01"
+        android:gravity="center"/>
+    <RadioGroup
+        android:id="@+id/rg_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/edit_01"
+        android:layout_toRightOf="@+id/text_02">
+        <RadioButton
+            android:id="@+id/rbtn_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MALE"
+            android:onClick="onRadioButtonClicked"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/rbtn_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FEMALE"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CITY : "
+        android:layout_below="@+id/text_03"
+        android:layout_alignRight="@+id/text_03"
+        android:layout_alignBottom="@+id/rg_02"
+        android:gravity="center"/>
+    <RadioGroup
+        android:id="@+id/rg_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rg_01"
+        android:layout_toRightOf="@+id/text_04">
+        <RadioButton
+            android:id="@+id/rbtn_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEOUL"
+            android:onClick="onRadioButtonClicked"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/rbtn_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUSAN"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton
+            android:id="@+id/rbtn_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ETC"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHONE : "
+        android:layout_below="@id/text_04"
+        android:layout_alignRight="@+id/text_04"
+        android:layout_alignBottom="@+id/layout_01"
+        android:gravity="center"/>
+    <LinearLayout
+        android:id="@+id/layout_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_04"
+        android:layout_toRightOf="@+id/text_04"
+        android:layout_toEndOf="@+id/text_04">
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:inputType="number"
+            android:maxLength="3"/>
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="number"
+            android:maxLength="4"/>
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="number"
+            android:maxLength="4"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_06"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHOICE CONTACT METHOD (MULTIPLE)"
+        android:gravity="center"
+        android:layout_below="@+id/text_05"
+        android:padding="16dp"/>
+    
+    <LinearLayout
+        android:id="@+id/layout_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_06"
+        android:gravity="center">
+        <CheckBox
+            android:id="@+id/checkbox_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="EMAIL"
+            android:onClick="onCheckBoxClicked"/>
+        <CheckBox
+            android:id="@+id/checkbox_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="PHONE"
+            android:onClick="onCheckBoxClicked"/>
+        <CheckBox
+            android:id="@+id/checkbox_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="VISIT"
+            android:onClick="onCheckBoxClicked"/>
+        <CheckBox
+            android:id="@+id/checkbox_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="SMS"
+            android:onClick="onCheckBoxClicked"/>
+        
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btn_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="REGISTRATION"
+        android:layout_below="@id/layout_02"
+        android:background="#ff9494"
+        android:layout_marginTop="8dp"/>
+    
+    <TextView
+        android:id="@+id/text_07"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/btn_01"
+        android:text="MEMBER LIST"
+        android:gravity="center"
+        android:background="#f6b5ff"
+        android:layout_marginTop="8dp"/>
+
+    <ListView
+        android:id="@+id/text_08"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_07"
+        android:background="#f4e3ff"
+        android:textSize="12sp" />
+
+</RelativeLayout>
